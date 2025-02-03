@@ -1,0 +1,30 @@
+.navbar{
+    background-color: #0066CC;
+    width:100%;
+    height:80px;
+    position: relative;
+}
+
+.logo{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 400px;
+}
+
+.sign-up{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 450px;
+}
+
+.log-in{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 350px;
+}
