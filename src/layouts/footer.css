@@ -5,7 +5,7 @@ html, body {
     flex-direction: column;
 }
 
-.footer-contener {
+.footer-container {
     width: 100%;
     background-color: black;
     padding: 15px 0;
@@ -38,8 +38,8 @@ html, body {
     color: black;
 }
 
-.footer-contener p {
+.footer-container p {
     color: white;
-    margin-top: 10px;
+    margin-top: 40px;
     font-size: 14px;
 }
