@@ -1,17 +1,12 @@
 import './App.css';
-import Navbar from './layouts/navbar';
-import MainScreen from './components/mainscreen';
-import Footer from './layouts/footer';
-import Instruction from './components/instruction';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <MainScreen/>
-      <Instruction/>
-      <Footer/>
-    </>
+      <Router>
+        <AppRoutes />
+      </Router>
   );
 }
 
