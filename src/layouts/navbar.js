@@ -1,5 +1,5 @@
 import './navbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import logo from '../assets/images/Logo.png';
 
 function Navbar(){
@@ -8,7 +8,9 @@ function Navbar(){
     return(
             <div className="navbar-container">
                 <div className="logo-wrapper">
-                    <img src={logo} className="logo-img" alt="Logo"/>
+                    <Link to="/" className="logo-link">
+                        <img src={logo} className="logo-img" alt="Logo"/>
+                    </Link>
                 </div>
                 <div class="auth-buttons">
                     <button className="sign-up" onClick={() => navigate("/register")}>Sign up</button>
