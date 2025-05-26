@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use FireBase\JWT\JWT;
-echo "Autoload działa";
-use FireBase\JWT\Key;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 $key = "key";
 $access_exp = 900;

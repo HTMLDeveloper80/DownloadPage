@@ -4,14 +4,14 @@ import Footer from '../layouts/footer';
 import Instruction from '../components/instruction';
 
 function Home() {
-    return (
-      <>
-        <Navbar/>
-        <MainScreen/>
-        <Instruction/>
-        <Footer/>
-      </>
-    );
-  }
+  return (
+    <>
+      <Navbar/>
+      <MainScreen/>
+      <Instruction/>
+      <Footer/>
+    </>
+  );
+}
   
-  export default Home;
+export default Home;
