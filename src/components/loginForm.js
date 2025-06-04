@@ -1,13 +1,21 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './loginForm.css';
 
 function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [loading, setLoading] = useState("");
+
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError("");
+        setSuccess("");
 
         try {
           const response = await fetch("http://localhost/Uplodex/login.php", {
@@ -26,14 +34,18 @@ function LoginForm() {
           if (response.ok) {
             localStorage.setItem("accessToken", data.accessToken);
             localStorage.setItem("refreshToken", data.refreshToken);
-            alert("Zalogowano pomyślnie!");
-            window.location.href = "/";
+            setSuccess("Zalogowano pomyślnie!")
+            setTimeout(() => {
+              navigate('/');
+            }, 1000);
           } else {
-            setError (data.message || "Błąd logowania.");
+              setError(data.message || "Błąd logowania.");
           }
         } catch (err) {
             console.error("Błąd: ", error);
             setError("Brak połączenia z serwerem.");
+        } finally {
+          setLoading(false);
         }
     };
 
@@ -59,7 +71,10 @@ function LoginForm() {
                 />
 
                 {error && <p className="error-text">{error}</p>}
-                <button type="submit">Log in</button>
+                {success && <p className="success-text">{success}</p>}
+                <button type="submit" disabled={loading}>
+                  {loading ? "Logging in..." : "Log in"}
+                </button>
             </form>
         </div>
     )
