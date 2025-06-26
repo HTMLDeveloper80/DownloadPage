@@ -50,4 +50,4 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
 $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
 $stmt->execute([$username, $email, $hashed]);
 
-echo json_encode(["success => true"]);
+echo json_encode(["success" => true]);
